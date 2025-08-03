@@ -17,7 +17,7 @@ function Register() {
           { username: username, password: password },
           { withCredentials: true }
         )
-        .then((res: any) => {
+        .then(() => {
           alert("Register successfully");
           navigate("/login");
         })

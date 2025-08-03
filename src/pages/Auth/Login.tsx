@@ -16,7 +16,7 @@ function Login() {
           { username: username, password: password },
           { withCredentials: true }
         )
-        .then((res: any) => {
+        .then(() => {
           alert("Login successful");
           navigate("/");
         })

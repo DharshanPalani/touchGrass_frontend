@@ -12,10 +12,21 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get("/me", { withCredentials: true }).then((res: any) => {
-      setUser(res.data.user);
-    });
+    api
+      .get("/me", { withCredentials: true })
+      .then((res: any) => {
+        setUser(res.data.user);
+      })
+      .catch((err: any) => {
+        navigate("/login");
+      });
   }, [navigate]);
+
+  const handleLogout = () => {
+    api.post("/logout", {}, { withCredentials: true }).then(() => {
+      navigate("/login");
+    });
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-amber-950 text-center p-6">
@@ -25,7 +36,10 @@ function Home() {
       <h3 className="text-2xl text-gray-300">
         Touch Grass Online, {user?.username}
       </h3>
-      <button className="border-2 w-20 p-5 mx-auto mt-4 text-white">
+      <button
+        className="border-2 w-20 p-5 mx-auto mt-4 text-white"
+        onClick={() => handleLogout()}
+      >
         Logout
       </button>
     </div>
