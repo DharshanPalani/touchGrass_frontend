@@ -19,12 +19,8 @@ function Profile() {
 
   return (
     <div>
-      Profile: {profileData?.username}{" "}
-      {profileData?.canEdit ? (
-        <button>Edit</button>
-      ) : (
-        <p>Nah fam this ain't your profile</p>
-      )}
+      <input value={profileData?.username} />
+      {profileData?.canEdit ? <button>Edit</button> : <p></p>}
     </div>
   );
 }
