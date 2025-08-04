@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 type UserData = {
   username: string;
+  bio: string;
   canEdit: boolean;
 };
 
@@ -19,7 +20,7 @@ function Profile() {
 
   return (
     <div>
-      <input value={profileData?.username} />
+      <input value={profileData?.bio} />
       {profileData?.canEdit ? <button>Edit</button> : <p></p>}
     </div>
   );
