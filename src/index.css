@@ -4,3 +4,9 @@
   margin: 0px;
   padding: 0px;
 }
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  background-color: #d2f5d2;
+  background-image: linear-gradient(to bottom, #e0ffe0, #c0ffc0);
+}
