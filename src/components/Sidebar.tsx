@@ -1,5 +1,3 @@
-import React from "react";
-
 function Sidebar() {
   return (
     <aside className="h-screen w-56 bg-green-700 text-white font-sans">

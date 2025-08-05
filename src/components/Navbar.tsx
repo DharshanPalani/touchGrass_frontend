@@ -1,5 +1,3 @@
-import React from "react";
-
 function Navbar() {
   return (
     <nav className="w-full bg-green-700 border-b border-green-700 text-white font-sans">
