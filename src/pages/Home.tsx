@@ -17,31 +17,24 @@ function Home() {
       .then((res: any) => {
         setUser(res.data.user);
       })
-      .catch((err: any) => {
+      .catch(() => {
         navigate("/login");
       });
   }, [navigate]);
 
-  const handleLogout = () => {
-    api.post("/logout", {}, { withCredentials: true }).then(() => {
-      navigate("/login");
-    });
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-amber-950 text-center p-6">
-      <h1 className="text-4xl font-bold text-gray-100 mb-4">
-        Welcome to Touch grass
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white text-center p-6">
+      <h1 className="text-4xl font-bold text-green-700 mb-4 border-b border-green-700 pb-2 w-full max-w-md">
+        Welcome to Touch Grass
       </h1>
-      <h3 className="text-2xl text-gray-300">
-        Touch Grass Online, {user?.username}
+      <h3 className="text-xl text-green-800 mb-6">
+        Search for someone, {user?.username}
       </h3>
-      <button
-        className="border-2 w-20 p-5 mx-auto mt-4 text-white"
-        onClick={() => handleLogout()}
-      >
-        Logout
-      </button>
+      <input
+        type="text"
+        placeholder="Search users you wanna touch grass with"
+        className="w-full max-w-md border border-green-700 p-3 text-green-900 text-sm rounded-none focus:outline-none"
+      />
     </div>
   );
 }

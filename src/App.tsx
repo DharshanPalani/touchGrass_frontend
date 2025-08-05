@@ -9,6 +9,7 @@ import { useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Logout from "./pages/Auth/Logout";
 
 function App() {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/:username" element={<Profile />} />
           </Routes>
         </div>
