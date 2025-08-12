@@ -37,6 +37,16 @@ function Profile() {
 
   const handleProfileEdit = () => {
     console.log("Edited profile data:", profileData);
+
+    api.post("/user/profile/update", {
+      firstName: profileData?.firstName,
+      lastName: profileData?.lastName,
+      age: profileData?.age,
+      course: profileData?.course,
+      interested: profileData?.interested,
+      relationship: profileData?.relationship,
+      bio: profileData?.bio,
+    });
   };
 
   const handleChange = (key: keyof UserData, value: string | number) => {
