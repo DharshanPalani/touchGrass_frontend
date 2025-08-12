@@ -47,6 +47,8 @@ function Profile() {
       relationship: profileData?.relationship,
       bio: profileData?.bio,
     });
+
+    setIsEditing(false);
   };
 
   const handleChange = (key: keyof UserData, value: string | number) => {
@@ -68,7 +70,7 @@ function Profile() {
     <div className="min-h-screen bg-white p-6 font-sans text-green-900">
       <div className="mx-auto w-[700px] border border-green-700 p-6">
         <div className="mb-6 flex items-center border-b border-green-700 pb-4">
-          <div className="h-16 w-16 bg-green-700" />
+          <div className="h-16 w-16 bg-green-600"></div>
           <div className="ml-4">
             <p className="text-lg font-bold text-green-900">
               @{profileData?.username}
